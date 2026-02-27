@@ -1,0 +1,232 @@
+{
+  "team": "Rocky Mountain College Battlin' Bears",
+  "teamShort": "Rocky Mountain",
+  "conference": "Cascade Collegiate Conference",
+  "conferenceShort": "CCC",
+  "sport": "Men's Soccer",
+  "season": "2025",
+  "record": {
+    "overall": { "wins": 8, "losses": 3, "ties": 7 },
+    "conference": { "wins": 6, "losses": 1, "ties": 5 },
+    "home": { "wins": 2, "losses": 1, "ties": 4 },
+    "away": { "wins": 5, "losses": 0, "ties": 2 },
+    "neutral": { "wins": 1, "losses": 2, "ties": 1 }
+  },
+  "schedule": [
+    {
+      "date": "2025-08-30",
+      "opponent": "Missouri Valley",
+      "ranking": "#9",
+      "result": "T",
+      "score": "4-4",
+      "venue": "Baker Labor Day Classic, Baldwin City KS",
+      "home": false,
+      "neutral": true,
+      "conference": false
+    },
+    {
+      "date": "2025-09-01",
+      "opponent": "Baker University",
+      "ranking": "#15",
+      "result": "T",
+      "score": "2-2",
+      "venue": "Baldwin City KS",
+      "home": false,
+      "neutral": false,
+      "conference": false
+    },
+    {
+      "date": "2025-09-03",
+      "opponent": "Kansas Christian",
+      "ranking": null,
+      "result": "W",
+      "score": "9-0",
+      "venue": "Overland Park KS",
+      "home": false,
+      "neutral": false,
+      "conference": false
+    },
+    {
+      "date": "2025-09-19",
+      "opponent": "Carroll College",
+      "ranking": "(RV)",
+      "result": "L",
+      "score": "0-1",
+      "venue": "Wendy's Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": false
+    },
+    {
+      "date": "2025-09-26",
+      "opponent": "Northwest University",
+      "ranking": null,
+      "result": "T",
+      "score": "2-2",
+      "venue": "Kirkland WA",
+      "home": false,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-09-27",
+      "opponent": "Evergreen State",
+      "ranking": null,
+      "result": "W",
+      "score": "7-1",
+      "venue": "Olympia WA",
+      "home": false,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-02",
+      "opponent": "Southern Oregon",
+      "ranking": "(RV)",
+      "result": "W",
+      "score": "1-0",
+      "venue": "Herb Klindt Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-04",
+      "opponent": "Oregon Tech",
+      "ranking": null,
+      "result": "T",
+      "score": "3-3",
+      "venue": "Herb Klindt Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-09",
+      "opponent": "College of Idaho",
+      "ranking": null,
+      "result": "T",
+      "score": "2-2",
+      "venue": "Herb Klindt Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-11",
+      "opponent": "Eastern Oregon",
+      "ranking": "(RV)",
+      "result": "T",
+      "score": "1-1",
+      "venue": "Wendy's Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-18",
+      "opponent": "Providence",
+      "ranking": null,
+      "result": "W",
+      "score": "2-0",
+      "venue": "Great Falls MT",
+      "home": false,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-24",
+      "opponent": "Walla Walla",
+      "ranking": null,
+      "result": "W",
+      "score": "6-2",
+      "venue": "Wendy's Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-26",
+      "opponent": "Warner Pacific",
+      "ranking": null,
+      "result": "T",
+      "score": "2-2",
+      "venue": "Wendy's Field, Billings MT",
+      "home": true,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-10-31",
+      "opponent": "Corban",
+      "ranking": null,
+      "result": "W",
+      "score": "2-0",
+      "venue": "Salem OR",
+      "home": false,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-11-01",
+      "opponent": "Bushnell",
+      "ranking": null,
+      "result": "W",
+      "score": "1-0",
+      "venue": "Eugene OR",
+      "home": false,
+      "neutral": false,
+      "conference": true
+    },
+    {
+      "date": "2025-11-08",
+      "opponent": "Southern Oregon",
+      "ranking": "(6)",
+      "result": "W",
+      "score": "2-0",
+      "venue": "CCC Tournament QF, Medford OR",
+      "home": false,
+      "neutral": true,
+      "conference": false,
+      "postseason": "CCC Tournament Quarterfinal"
+    },
+    {
+      "date": "2025-11-10",
+      "opponent": "Warner Pacific",
+      "ranking": "(4)",
+      "result": "L",
+      "score": "0-2",
+      "venue": "CCC Tournament SF, Medford OR",
+      "home": false,
+      "neutral": true,
+      "conference": false,
+      "postseason": "CCC Tournament Semifinal"
+    },
+    {
+      "date": "2025-11-20",
+      "opponent": "Union Commonwealth",
+      "ranking": null,
+      "result": "L",
+      "score": "0-4",
+      "venue": "NAIA National Tournament, McKenzie TN",
+      "home": false,
+      "neutral": true,
+      "conference": false,
+      "postseason": "NAIA National Tournament"
+    }
+  ],
+  "standings": [
+    { "team": "Southern Oregon", "confW": 9, "confL": 1, "confT": 2, "overallW": 15, "overallL": 3, "overallT": 2, "pts": 29 },
+    { "team": "Eastern Oregon", "confW": 7, "confL": 2, "confT": 3, "overallW": 11, "overallL": 4, "overallT": 4, "pts": 24 },
+    { "team": "Warner Pacific", "confW": 7, "confL": 3, "confT": 2, "overallW": 12, "overallL": 5, "overallT": 3, "pts": 23 },
+    { "team": "Rocky Mountain", "confW": 6, "confL": 1, "confT": 5, "overallW": 8, "overallL": 3, "overallT": 7, "pts": 23, "highlight": true },
+    { "team": "College of Idaho", "confW": 5, "confL": 3, "confT": 4, "overallW": 9, "overallL": 6, "overallT": 4, "pts": 19 },
+    { "team": "Corban", "confW": 4, "confL": 5, "confT": 3, "overallW": 8, "overallL": 8, "overallT": 3, "pts": 15 },
+    { "team": "Oregon Tech", "confW": 3, "confL": 5, "confT": 4, "overallW": 6, "overallL": 9, "overallT": 4, "pts": 13 },
+    { "team": "Walla Walla", "confW": 3, "confL": 7, "confT": 2, "overallW": 5, "overallL": 11, "overallT": 3, "pts": 11 },
+    { "team": "Northwest", "confW": 3, "confL": 7, "confT": 2, "overallW": 5, "overallL": 12, "overallT": 2, "pts": 11 },
+    { "team": "Providence", "confW": 2, "confL": 7, "confT": 3, "overallW": 4, "overallL": 11, "overallT": 4, "pts": 9 },
+    { "team": "Bushnell", "confW": 2, "confL": 8, "confT": 2, "overallW": 4, "overallL": 13, "overallT": 2, "pts": 8 },
+    { "team": "Evergreen State", "confW": 1, "confL": 9, "confT": 2, "overallW": 3, "overallL": 14, "overallT": 2, "pts": 5 }
+  ]
+}

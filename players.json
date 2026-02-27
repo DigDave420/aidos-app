@@ -1,0 +1,205 @@
+{
+  "team": "Rocky Mountain College Battlin' Bears",
+  "season": "2025",
+  "cardStyle": "gold",
+  "players": [
+    {
+      "name": "Aidan",
+      "number": 10,
+      "position": "MF",
+      "positionFull": "Midfielder",
+      "nationality": "\ud83c\uddfa\ud83c\uddf8",
+      "photo": "players/aidan.png",
+      "video": "players/aidan.webm",
+      "stats": { "pace": 78, "shooting": 72, "passing": 81, "dribbling": 80, "defending": 65, "physical": 75 },
+      "seasonStats": { "gamesPlayed": 16, "goals": 4, "assists": 7, "cleanSheets": 0 }
+    },
+    {
+      "name": "Martinez",
+      "number": 1,
+      "position": "GK",
+      "positionFull": "Goalkeeper",
+      "nationality": "\ud83c\uddf2\ud83c\uddfd",
+      "photo": "players/martinez.png",
+      "video": null,
+      "stats": { "pace": 45, "shooting": 20, "passing": 58, "dribbling": 35, "defending": 68, "physical": 72 },
+      "seasonStats": { "gamesPlayed": 18, "goals": 0, "assists": 0, "cleanSheets": 7 }
+    },
+    {
+      "name": "Johansson",
+      "number": 4,
+      "position": "CB",
+      "positionFull": "Center Back",
+      "nationality": "\ud83c\uddf8\ud83c\uddea",
+      "photo": "players/johansson.png",
+      "video": null,
+      "stats": { "pace": 62, "shooting": 38, "passing": 64, "dribbling": 50, "defending": 82, "physical": 80 },
+      "seasonStats": { "gamesPlayed": 17, "goals": 2, "assists": 1, "cleanSheets": 7 }
+    },
+    {
+      "name": "Okonkwo",
+      "number": 5,
+      "position": "CB",
+      "positionFull": "Center Back",
+      "nationality": "\ud83c\uddf3\ud83c\uddec",
+      "photo": "players/okonkwo.png",
+      "video": null,
+      "stats": { "pace": 65, "shooting": 35, "passing": 60, "dribbling": 48, "defending": 79, "physical": 83 },
+      "seasonStats": { "gamesPlayed": 16, "goals": 1, "assists": 0, "cleanSheets": 6 }
+    },
+    {
+      "name": "Thompson",
+      "number": 2,
+      "position": "RB",
+      "positionFull": "Right Back",
+      "nationality": "\ud83c\uddfa\ud83c\uddf8",
+      "photo": "players/thompson.png",
+      "video": null,
+      "stats": { "pace": 80, "shooting": 45, "passing": 68, "dribbling": 65, "defending": 74, "physical": 71 },
+      "seasonStats": { "gamesPlayed": 18, "goals": 1, "assists": 5, "cleanSheets": 7 }
+    },
+    {
+      "name": "Chen",
+      "number": 3,
+      "position": "LB",
+      "positionFull": "Left Back",
+      "nationality": "\ud83c\udde8\ud83c\udde6",
+      "photo": "players/chen.png",
+      "video": null,
+      "stats": { "pace": 77, "shooting": 42, "passing": 70, "dribbling": 66, "defending": 73, "physical": 69 },
+      "seasonStats": { "gamesPlayed": 15, "goals": 0, "assists": 3, "cleanSheets": 5 }
+    },
+    {
+      "name": "Reeves",
+      "number": 6,
+      "position": "CDM",
+      "positionFull": "Defensive Midfielder",
+      "nationality": "\ud83c\uddfa\ud83c\uddf8",
+      "photo": "players/reeves.png",
+      "video": null,
+      "stats": { "pace": 68, "shooting": 55, "passing": 76, "dribbling": 70, "defending": 77, "physical": 78 },
+      "seasonStats": { "gamesPlayed": 17, "goals": 2, "assists": 4, "cleanSheets": 0 }
+    },
+    {
+      "name": "Silva",
+      "number": 8,
+      "position": "CM",
+      "positionFull": "Central Midfielder",
+      "nationality": "\ud83c\udde7\ud83c\uddf7",
+      "photo": "players/silva.png",
+      "video": null,
+      "stats": { "pace": 72, "shooting": 68, "passing": 82, "dribbling": 78, "defending": 60, "physical": 70 },
+      "seasonStats": { "gamesPlayed": 18, "goals": 5, "assists": 8, "cleanSheets": 0 }
+    },
+    {
+      "name": "Brennan",
+      "number": 14,
+      "position": "CAM",
+      "positionFull": "Attacking Midfielder",
+      "nationality": "\ud83c\uddee\ud83c\uddea",
+      "photo": "players/brennan.png",
+      "video": null,
+      "stats": { "pace": 75, "shooting": 74, "passing": 79, "dribbling": 82, "defending": 42, "physical": 64 },
+      "seasonStats": { "gamesPlayed": 16, "goals": 6, "assists": 5, "cleanSheets": 0 }
+    },
+    {
+      "name": "Kimura",
+      "number": 7,
+      "position": "RW",
+      "positionFull": "Right Winger",
+      "nationality": "\ud83c\uddef\ud83c\uddf5",
+      "photo": "players/kimura.png",
+      "video": null,
+      "stats": { "pace": 88, "shooting": 70, "passing": 72, "dribbling": 84, "defending": 35, "physical": 60 },
+      "seasonStats": { "gamesPlayed": 17, "goals": 7, "assists": 6, "cleanSheets": 0 }
+    },
+    {
+      "name": "Duval",
+      "number": 11,
+      "position": "LW",
+      "positionFull": "Left Winger",
+      "nationality": "\ud83c\uddeb\ud83c\uddf7",
+      "photo": "players/duval.png",
+      "video": null,
+      "stats": { "pace": 86, "shooting": 72, "passing": 68, "dribbling": 81, "defending": 38, "physical": 63 },
+      "seasonStats": { "gamesPlayed": 14, "goals": 5, "assists": 4, "cleanSheets": 0 }
+    },
+    {
+      "name": "Andersen",
+      "number": 9,
+      "position": "ST",
+      "positionFull": "Striker",
+      "nationality": "\ud83c\udde9\ud83c\uddf0",
+      "photo": "players/andersen.png",
+      "video": null,
+      "stats": { "pace": 82, "shooting": 84, "passing": 62, "dribbling": 76, "defending": 30, "physical": 77 },
+      "seasonStats": { "gamesPlayed": 18, "goals": 12, "assists": 3, "cleanSheets": 0 }
+    },
+    {
+      "name": "Hawkins",
+      "number": 12,
+      "position": "GK",
+      "positionFull": "Goalkeeper",
+      "nationality": "\ud83c\uddfa\ud83c\uddf8",
+      "photo": "players/hawkins.png",
+      "video": null,
+      "stats": { "pace": 42, "shooting": 18, "passing": 55, "dribbling": 30, "defending": 64, "physical": 70 },
+      "seasonStats": { "gamesPlayed": 4, "goals": 0, "assists": 0, "cleanSheets": 2 }
+    },
+    {
+      "name": "Nakamura",
+      "number": 16,
+      "position": "CM",
+      "positionFull": "Central Midfielder",
+      "nationality": "\ud83c\uddef\ud83c\uddf5",
+      "photo": "players/nakamura.png",
+      "video": null,
+      "stats": { "pace": 70, "shooting": 62, "passing": 75, "dribbling": 74, "defending": 64, "physical": 66 },
+      "seasonStats": { "gamesPlayed": 13, "goals": 2, "assists": 3, "cleanSheets": 0 }
+    },
+    {
+      "name": "Walsh",
+      "number": 15,
+      "position": "CB",
+      "positionFull": "Center Back",
+      "nationality": "\ud83c\uddfa\ud83c\uddf8",
+      "photo": "players/walsh.png",
+      "video": null,
+      "stats": { "pace": 60, "shooting": 32, "passing": 58, "dribbling": 44, "defending": 76, "physical": 79 },
+      "seasonStats": { "gamesPlayed": 12, "goals": 1, "assists": 0, "cleanSheets": 4 }
+    },
+    {
+      "name": "Gutierrez",
+      "number": 17,
+      "position": "RW",
+      "positionFull": "Right Winger",
+      "nationality": "\ud83c\udde8\ud83c\uddf4",
+      "photo": "players/gutierrez.png",
+      "video": null,
+      "stats": { "pace": 84, "shooting": 65, "passing": 66, "dribbling": 78, "defending": 40, "physical": 62 },
+      "seasonStats": { "gamesPlayed": 11, "goals": 3, "assists": 2, "cleanSheets": 0 }
+    },
+    {
+      "name": "Mueller",
+      "number": 20,
+      "position": "ST",
+      "positionFull": "Striker",
+      "nationality": "\ud83c\udde9\ud83c\uddea",
+      "photo": "players/mueller.png",
+      "video": null,
+      "stats": { "pace": 79, "shooting": 78, "passing": 58, "dribbling": 72, "defending": 28, "physical": 74 },
+      "seasonStats": { "gamesPlayed": 10, "goals": 5, "assists": 1, "cleanSheets": 0 }
+    },
+    {
+      "name": "Park",
+      "number": 22,
+      "position": "LB",
+      "positionFull": "Left Back",
+      "nationality": "\ud83c\uddf0\ud83c\uddf7",
+      "photo": "players/park.png",
+      "video": null,
+      "stats": { "pace": 76, "shooting": 40, "passing": 67, "dribbling": 62, "defending": 71, "physical": 68 },
+      "seasonStats": { "gamesPlayed": 9, "goals": 0, "assists": 2, "cleanSheets": 3 }
+    }
+  ]
+}
