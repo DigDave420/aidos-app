@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aidos-app-v5';
+const CACHE_NAME = 'aidos-app-v6';
 const API_CACHE = 'aidos-api-v1';
 const MAX_API_ENTRIES = 50;
 
@@ -11,6 +11,7 @@ const APP_ASSETS = [
   './icon-512.svg',
   './team-data.json',
   './players.json',
+  './bears-logo.svg',
   'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js',
   'https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',

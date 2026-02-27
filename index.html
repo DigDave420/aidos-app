@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
   <meta name="theme-color" content="#1a1a2e">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,8 +16,8 @@
       --bg-input: #0f3460;
       --text: #e0e0e0;
       --text-muted: #8892a4;
-      --accent: #e94560;
-      --accent-hover: #ff6b81;
+      --accent: #c5a44e;
+      --accent-hover: #d4b85a;
       --success: #4ecca3;
       --warning: #f0a500;
       --border: #2a2a4a;
@@ -30,8 +30,8 @@
       --bg-input: #e8e8e8;
       --text: #1a1a2e;
       --text-muted: #666;
-      --accent: #e94560;
-      --accent-hover: #d63851;
+      --accent: #c5a44e;
+      --accent-hover: #b8943f;
       --border: #ddd;
     }
 
@@ -39,21 +39,33 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
       padding-bottom: 80px;
       transition: background 0.3s, color 0.3s;
     }
 
     /* Header */
     .header {
-      padding: 20px;
-      text-align: center;
+      padding: 16px 20px;
       border-bottom: 1px solid var(--border);
     }
-    .header h1 { font-size: 1.4rem; font-weight: 700; }
+    .header h1 { font-size: 1.4rem; font-weight: 700; margin: 0; }
     .header .subtitle { color: var(--text-muted); font-size: 0.85rem; margin-top: 2px; }
+    .header-row { display: flex; align-items: center; gap: 12px; justify-content: center; position: relative; }
+    .header-logo { width: 44px; height: 44px; }
+    .header-gear {
+      position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: var(--text-muted); cursor: pointer;
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+    }
+    .header-gear svg { width: 22px; height: 22px; }
+    .header-gear:hover { color: var(--accent); }
 
     /* Navigation */
     .bottom-nav {
@@ -76,8 +88,10 @@
       background: none;
       border: none;
       color: var(--text-muted);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       padding: 6px 12px;
+      min-height: 44px;
+      min-width: 44px;
       cursor: pointer;
       transition: color 0.2s;
     }
@@ -85,7 +99,7 @@
     .nav-item svg { width: 22px; height: 22px; }
 
     /* Pages */
-    .page { display: none; padding: 20px; }
+    .page { display: none; padding: 20px 16px; }
     .page.active { display: block; }
 
     /* Cards */
@@ -94,13 +108,13 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 16px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
     .card h3 { font-size: 1rem; margin-bottom: 10px; }
 
     /* Dashboard */
-    .greeting { font-size: 1.6rem; font-weight: 700; margin-bottom: 4px; }
-    .greeting-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px; }
+    .greeting { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .greeting-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; }
     .quick-stats {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -115,16 +129,16 @@
       text-align: center;
     }
     .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
-    .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
     .season-badge {
       display: inline-block;
       padding: 4px 12px;
       border-radius: 20px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-bottom: 16px;
     }
-    .season-in { background: #e9456033; color: var(--accent); }
+    .season-in { background: #c5a44e33; color: var(--accent); }
     .season-off { background: #4ecca333; color: var(--success); }
     .match-day-banner {
       background: var(--warning);
@@ -143,7 +157,7 @@
     .form-group { margin-bottom: 14px; }
     .form-group label {
       display: block;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 4px;
       font-weight: 500;
@@ -176,7 +190,7 @@
       align-items: center;
       margin-bottom: 6px;
     }
-    .slider-header label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; margin: 0; }
+    .slider-header label { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; margin: 0; }
     .slider-header span { font-size: 0.9rem; font-weight: 600; color: var(--accent); }
     input[type="range"] {
       -webkit-appearance: none;
@@ -202,7 +216,7 @@
       border-radius: 6px;
     }
     .macro-total.valid { color: var(--success); background: #4ecca315; }
-    .macro-total.invalid { color: var(--accent); background: #e9456015; }
+    .macro-total.invalid { color: var(--accent); background: #c5a44e15; }
 
     /* Toggles */
     .toggle-row {
@@ -214,7 +228,7 @@
     }
     .toggle-row:last-child { border-bottom: none; }
     .toggle-label { font-size: 0.9rem; }
-    .toggle-sublabel { font-size: 0.75rem; color: var(--text-muted); }
+    .toggle-sublabel { font-size: 0.8rem; color: var(--text-muted); }
     .toggle {
       position: relative;
       width: 48px;
@@ -249,7 +263,7 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 10px 20px;
+      padding: 14px 20px;
       border: none;
       border-radius: 8px;
       font-size: 0.9rem;
@@ -279,7 +293,7 @@
       color: var(--accent);
     }
     .calorie-display .label {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
     }
     .calorie-breakdown {
@@ -295,7 +309,7 @@
       border-radius: 8px;
     }
     .calorie-breakdown .macro-val { font-weight: 700; font-size: 1rem; }
-    .calorie-breakdown .macro-label { font-size: 0.7rem; color: var(--text-muted); }
+    .calorie-breakdown .macro-label { font-size: 0.8rem; color: var(--text-muted); }
 
     /* Modal */
     .modal-overlay {
@@ -372,12 +386,12 @@
 
     /* Section header */
     .section-header {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
       color: var(--text-muted);
-      margin: 20px 0 10px;
+      margin: 24px 0 12px;
     }
 
     /* Hidden file input */
@@ -419,8 +433,8 @@
       border-radius: var(--radius);
     }
     .macro-ring .ring-value { font-size: 1.1rem; font-weight: 700; }
-    .macro-ring .ring-target { font-size: 0.65rem; color: var(--text-muted); }
-    .macro-ring .ring-label { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+    .macro-ring .ring-target { font-size: 0.8rem; color: var(--text-muted); }
+    .macro-ring .ring-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
     .macro-ring .ring-bar {
       height: 4px;
       background: var(--bg-input);
@@ -516,7 +530,7 @@
     }
     .search-result-item:active { border-color: var(--accent); }
     .result-name { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
-    .result-macros { font-size: 0.7rem; color: var(--text-muted); }
+    .result-macros { font-size: 0.8rem; color: var(--text-muted); }
     .search-status {
       text-align: center;
       padding: 16px;
@@ -536,7 +550,7 @@
     }
     .food-log-info { flex: 1; min-width: 0; }
     .food-log-name { font-size: 0.85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .food-log-detail { font-size: 0.7rem; color: var(--text-muted); }
+    .food-log-detail { font-size: 0.8rem; color: var(--text-muted); }
     .food-log-cals { font-size: 0.9rem; font-weight: 700; color: var(--accent); margin: 0 8px; white-space: nowrap; }
     .food-log-delete {
       background: none;
@@ -564,7 +578,7 @@
       margin-bottom: 12px;
     }
     .qty-food-preview h4 { font-size: 0.9rem; margin-bottom: 4px; }
-    .qty-food-preview .macros { font-size: 0.75rem; color: var(--text-muted); }
+    .qty-food-preview .macros { font-size: 0.8rem; color: var(--text-muted); }
     .qty-row { display: flex; gap: 10px; margin-bottom: 12px; }
     .qty-row .form-group { flex: 1; margin-bottom: 0; }
     .qty-preview-line {
@@ -621,7 +635,7 @@
       margin-bottom: 6px;
     }
     .custom-meal-name { font-size: 0.85rem; font-weight: 600; }
-    .custom-meal-detail { font-size: 0.7rem; color: var(--text-muted); }
+    .custom-meal-detail { font-size: 0.8rem; color: var(--text-muted); }
     .custom-meal-actions { display: flex; gap: 10px; }
     .custom-meal-actions button {
       background: none;
@@ -643,7 +657,8 @@
     }
     .workout-tab {
       flex: 1;
-      padding: 10px;
+      padding: 10px 16px;
+      min-height: 44px;
       background: var(--bg-input);
       border: none;
       color: var(--text-muted);
@@ -691,12 +706,12 @@
     }
     .exercise-card-name:active { color: var(--accent); }
     .exercise-card-desc {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-bottom: 6px;
     }
     .exercise-card-last {
-      font-size: 0.72rem;
+      font-size: 0.8rem;
       color: var(--success);
       margin-bottom: 8px;
     }
@@ -714,7 +729,7 @@
       display: grid;
       grid-template-columns: 32px 1fr 1fr 34px 34px;
       gap: 6px;
-      font-size: 0.65rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       text-transform: uppercase;
       margin-bottom: 4px;
@@ -763,7 +778,7 @@
       transition: all 0.15s;
     }
     .set-check.done { background: var(--success); border-color: var(--success); color: #fff; }
-    .rest-btn { border-width: 1px; font-size: 0.7rem; }
+    .rest-btn { border-width: 1px; font-size: 0.8rem; }
     .rest-btn:active { background: var(--accent); color: #fff; border-color: var(--accent); }
     .set-actions {
       display: flex;
@@ -772,7 +787,7 @@
     }
     .set-actions button {
       padding: 6px 12px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       background: var(--bg-input);
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -801,7 +816,7 @@
       color: var(--accent);
       font-variant-numeric: tabular-nums;
     }
-    .rest-timer-label { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; }
+    .rest-timer-label { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 2px; }
     .rest-timer-bar button {
       margin-top: 6px;
       padding: 6px 20px;
@@ -851,7 +866,7 @@
       font-size: 1rem;
     }
     .exercise-category-hdr {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -868,7 +883,7 @@
     }
     .exercise-pick-item:active { border-color: var(--accent); }
     .exercise-pick-name { font-size: 0.85rem; font-weight: 600; }
-    .exercise-pick-meta { font-size: 0.7rem; color: var(--text-muted); }
+    .exercise-pick-meta { font-size: 0.8rem; color: var(--text-muted); }
 
     .history-overlay {
       display: none;
@@ -899,14 +914,14 @@
     }
     .history-entry:last-child { border-bottom: none; }
     .history-date { font-size: 0.8rem; font-weight: 600; margin-bottom: 2px; }
-    .history-sets { font-size: 0.75rem; color: var(--text-muted); }
+    .history-sets { font-size: 0.8rem; color: var(--text-muted); }
     .history-pb-badge {
       display: inline-block;
       padding: 1px 8px;
       border-radius: 10px;
       background: #f0a50033;
       color: var(--warning);
-      font-size: 0.65rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-left: 6px;
     }
@@ -919,8 +934,8 @@
       border-radius: 8px;
       margin-bottom: 6px;
     }
-    .recent-workout-date { font-size: 0.8rem; font-weight: 600; }
-    .recent-workout-detail { font-size: 0.7rem; color: var(--text-muted); }
+    .recent-workout-date { font-size: 0.85rem; font-weight: 600; }
+    .recent-workout-detail { font-size: 0.8rem; color: var(--text-muted); }
 
     /* ── Drills ────────────────────────────────────────────────── */
     .drill-filters {
@@ -932,18 +947,19 @@
     }
     .drill-filter {
       flex-shrink: 0;
-      padding: 6px 14px;
+      padding: 10px 12px;
+      min-height: 44px;
       border-radius: 20px;
       background: var(--bg-input);
       border: 2px solid transparent;
       color: var(--text);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
     }
     .drill-filter.active { border-color: var(--accent); color: var(--accent); }
     .drill-category-hdr {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -975,30 +991,30 @@
       align-items: center;
       justify-content: center;
       color: transparent;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       transition: all 0.15s;
     }
     .drill-checkbox.done { background: var(--success); border-color: var(--success); color: #fff; }
     .drill-info { flex: 1; min-width: 0; }
     .drill-name { font-size: 0.85rem; font-weight: 600; }
-    .drill-desc { font-size: 0.73rem; color: var(--text-muted); margin-top: 2px; }
+    .drill-desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
     .drill-meta { display: flex; gap: 8px; margin-top: 4px; align-items: center; }
     .drill-badge {
       display: inline-block;
       padding: 2px 8px;
       border-radius: 10px;
-      font-size: 0.65rem;
+      font-size: 0.8rem;
       font-weight: 600;
     }
     .drill-badge.beginner { background: #4ecca333; color: var(--success); }
     .drill-badge.intermediate { background: #f0a50033; color: var(--warning); }
-    .drill-badge.advanced { background: #e9456033; color: var(--accent); }
-    .drill-duration { font-size: 0.7rem; color: var(--text-muted); }
+    .drill-badge.advanced { background: #c5a44e33; color: var(--accent); }
+    .drill-duration { font-size: 0.8rem; color: var(--text-muted); }
     .drill-notes-toggle {
       background: none;
       border: none;
       color: var(--text-muted);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       cursor: pointer;
       margin-top: 6px;
       padding: 2px 0;
@@ -1045,8 +1061,8 @@
       text-align: center;
     }
     .body-stat-value { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
-    .body-stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-    .body-stat-change { font-size: 0.7rem; margin-top: 4px; font-weight: 600; }
+    .body-stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+    .body-stat-change { font-size: 0.8rem; margin-top: 4px; font-weight: 600; }
     .body-stat-change.positive { color: var(--accent); }
     .body-stat-change.negative { color: var(--success); }
     .body-stat-change.neutral { color: var(--text-muted); }
@@ -1075,7 +1091,7 @@
     .body-entry-item:active { border-color: var(--accent); }
     .body-entry-info { flex: 1; min-width: 0; }
     .body-entry-date { font-size: 0.85rem; font-weight: 600; }
-    .body-entry-detail { font-size: 0.7rem; color: var(--text-muted); }
+    .body-entry-detail { font-size: 0.8rem; color: var(--text-muted); }
     .body-entry-weight { font-size: 0.95rem; font-weight: 700; color: var(--accent); margin: 0 8px; white-space: nowrap; }
     .body-entry-delete {
       background: none;
@@ -1106,12 +1122,14 @@
     }
     .chart-range-btn {
       flex-shrink: 0;
-      padding: 4px 12px;
+      padding: 8px 14px;
+      min-height: 44px;
+      min-width: 44px;
       border-radius: 14px;
       background: var(--bg-input);
       border: 2px solid transparent;
       color: var(--text);
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
     }
@@ -1144,7 +1162,7 @@
       right: 0;
       background: rgba(0,0,0,0.65);
       color: #fff;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       text-align: center;
       padding: 3px;
     }
@@ -1199,7 +1217,7 @@
       border: 1px solid var(--warning);
       border-radius: 8px;
       padding: 10px 14px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--warning);
       margin-bottom: 12px;
       display: none;
@@ -1207,7 +1225,7 @@
     .storage-warning.show { display: block; }
 
     .dash-weight-card { cursor: pointer; }
-    .dash-weight-trend { font-size: 0.7rem; margin-top: 4px; font-weight: 600; }
+    .dash-weight-trend { font-size: 0.8rem; margin-top: 4px; font-weight: 600; }
 
     /* ── Dashboard Intelligence ─────────────────────────────────── */
     .dash-quick-actions {
@@ -1223,11 +1241,12 @@
       align-items: center;
       gap: 6px;
       padding: 10px 16px;
+      min-height: 44px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       color: var(--text);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       transition: border-color 0.2s;
@@ -1253,7 +1272,7 @@
       font-weight: 700;
     }
     .dash-food-card .cal-sub {
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
     .dash-macro-bars {
@@ -1264,7 +1283,7 @@
     }
     .dash-macro-item { text-align: center; }
     .dash-macro-item .macro-name {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -1339,7 +1358,7 @@
     }
     .dash-streak .streak-fire { font-size: 1.5rem; }
     .dash-streak .streak-text { font-size: 0.9rem; font-weight: 700; }
-    .dash-streak .streak-sub { font-size: 0.72rem; color: var(--text-muted); }
+    .dash-streak .streak-sub { font-size: 0.8rem; color: var(--text-muted); }
 
     .dash-match-hydrate {
       padding: 8px 14px;
@@ -1365,7 +1384,7 @@
       color: #1a1a2e;
       text-align: center;
       padding: 6px 12px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       z-index: 400;
       transform: translateY(-100%);
@@ -1450,7 +1469,7 @@
       color: #fff;
       border: none;
       border-radius: 6px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 700;
       cursor: pointer;
       white-space: nowrap;
@@ -1485,7 +1504,7 @@
       font-variant-numeric: tabular-nums;
     }
     .run-stat-box .run-stat-label {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 2px;
       text-transform: uppercase;
@@ -1499,7 +1518,7 @@
     .run-controls .btn { flex: 1; margin-bottom: 0; }
     .run-gps-status {
       text-align: center;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       padding: 4px;
     }
@@ -1518,7 +1537,7 @@
     .run-history-item:active { border-color: var(--accent); }
     .run-history-info { flex: 1; min-width: 0; }
     .run-history-date { font-size: 0.85rem; font-weight: 600; }
-    .run-history-detail { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+    .run-history-detail { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
     .run-history-dist {
       font-size: 1rem;
       font-weight: 700;
@@ -1542,7 +1561,7 @@
       display: grid;
       grid-template-columns: 50px 1fr 1fr;
       gap: 8px;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       text-transform: uppercase;
       padding: 6px 12px;
@@ -1577,7 +1596,7 @@
       margin-bottom: 2px;
     }
     .team-header-card .team-conf {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 12px;
     }
@@ -1599,7 +1618,7 @@
       color: var(--accent);
     }
     .team-record-box .rec-label {
-      font-size: 0.68rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 2px;
       text-transform: uppercase;
@@ -1609,7 +1628,7 @@
       display: flex;
       justify-content: center;
       gap: 16px;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 8px;
     }
@@ -1624,11 +1643,12 @@
     }
     .team-tab {
       flex: 1;
-      padding: 10px;
+      padding: 10px 16px;
+      min-height: 44px;
       background: var(--bg-input);
       border: none;
       color: var(--text-muted);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
@@ -1672,7 +1692,7 @@
     }
     .match-opponent .match-rank { color: var(--text-muted); font-weight: 400; }
     .match-meta {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-top: 2px;
     }
@@ -1682,7 +1702,7 @@
       border-radius: 8px;
       background: var(--accent);
       color: #fff;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-left: 4px;
       vertical-align: middle;
@@ -1693,7 +1713,7 @@
       border-radius: 8px;
       background: var(--warning);
       color: #1a1a2e;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 600;
       margin-left: 4px;
       vertical-align: middle;
@@ -1709,12 +1729,12 @@
     .standings-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
     }
     .standings-table th {
       text-align: left;
       padding: 8px 6px;
-      font-size: 0.68rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       color: var(--text-muted);
@@ -1728,7 +1748,7 @@
     .standings-table td:not(:first-child) { text-align: center; }
     .standings-table tr:last-child td { border-bottom: none; }
     .standings-table .highlight-row {
-      background: #e9456015;
+      background: #c5a44e15;
       font-weight: 600;
     }
     .standings-table .rank-num {
@@ -1748,12 +1768,13 @@
     }
     .squad-filter {
       flex-shrink: 0;
-      padding: 6px 14px;
+      padding: 10px 14px;
+      min-height: 44px;
       border-radius: 20px;
       background: var(--bg-input);
       border: 2px solid transparent;
       color: var(--text);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
     }
@@ -2017,17 +2038,61 @@
       border-top: 1px solid rgba(0,0,0,0.1);
     }
 
-    /* Adjust nav for 8 items */
-    .nav-item { padding: 6px 2px; font-size: 0.55rem; }
-    .nav-item svg { width: 17px; height: 17px; }
+    /* Settings Slide-over */
+    .settings-overlay {
+      position: fixed; top: 0; right: -100%; width: 100%; height: 100%;
+      background: var(--bg); z-index: 200; overflow-y: auto;
+      padding: 20px; padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
+      padding-bottom: 100px; transition: right 0.3s ease;
+    }
+    .settings-overlay.open { right: 0; }
+    .settings-close-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .settings-close-row h2 { font-size: 1.2rem; margin: 0; }
+    .btn-close-settings {
+      background: none; border: none; color: var(--text); cursor: pointer;
+      width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    /* Track page sub-tabs (Body / Runs) */
+    .track-tabs {
+      display: flex;
+      margin-bottom: 16px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .track-tab {
+      flex: 1;
+      padding: 10px 16px;
+      min-height: 44px;
+      background: var(--bg-input);
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .track-tab.active { background: var(--accent); color: #fff; }
+    .track-panel { display: none; }
+    .track-panel.active { display: block; }
   </style>
 </head>
 <body data-theme="dark">
 
   <!-- Header -->
   <div class="header">
-    <h1>Aido's App</h1>
-    <div class="subtitle">Battlin' Bears Soccer</div>
+    <div class="header-row">
+      <img src="bears-logo.svg" alt="Bears" class="header-logo">
+      <div>
+        <h1>Aido's App</h1>
+        <div class="subtitle">Battlin' Bears Soccer</div>
+      </div>
+      <button class="header-gear" id="btn-open-settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </button>
+    </div>
   </div>
 
   <!-- Dashboard Page -->
@@ -2040,19 +2105,19 @@
 
     <!-- Quick Actions Row -->
     <div class="dash-quick-actions">
-      <button class="dash-quick-btn" onclick="document.querySelector('[data-page=food]').click()">
+      <button class="dash-quick-btn" onclick="navigateToPage('food')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/></svg>
         Log Food
       </button>
-      <button class="dash-quick-btn" onclick="document.querySelector('[data-page=workout]').click()">
+      <button class="dash-quick-btn" onclick="navigateToPage('workout')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="7" width="4" height="10" rx="1"/><rect x="19" y="7" width="4" height="10" rx="1"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         Start Workout
       </button>
-      <button class="dash-quick-btn" onclick="document.querySelector('[data-page=runs]').click()">
+      <button class="dash-quick-btn" onclick="navigateToTrackTab('runs')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
         Go Run
       </button>
-      <button class="dash-quick-btn" onclick="document.querySelector('[data-page=body]').click()">
+      <button class="dash-quick-btn" onclick="navigateToTrackTab('body')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         Log Weight
       </button>
@@ -2080,13 +2145,13 @@
     </div>
 
     <!-- Running Card -->
-    <div class="card" id="dash-run-card" onclick="document.querySelector('[data-page=runs]').click()" style="cursor:pointer">
+    <div class="card" id="dash-run-card" onclick="navigateToTrackTab('runs')" style="cursor:pointer">
       <h3>Running</h3>
       <div id="dash-run-content"></div>
     </div>
 
     <!-- Weight Trend Card -->
-    <div class="card dash-weight-card" id="dash-weight-card" onclick="document.querySelector('[data-page=body]').click()">
+    <div class="card dash-weight-card" id="dash-weight-card" onclick="navigateToTrackTab('body')">
       <h3>Weight</h3>
       <div id="dash-weight-content"></div>
     </div>
@@ -2212,152 +2277,161 @@
     </div>
   </div>
 
-  <!-- Body Tracking Page -->
-  <div id="page-body" class="page">
-    <!-- Stats Summary -->
-    <div class="body-stats-summary" id="body-stats-summary">
-      <div class="body-stat-card">
-        <div class="body-stat-value" id="body-current-weight">--</div>
-        <div class="body-stat-label">Current Weight</div>
-        <div class="body-stat-change neutral" id="body-weight-7d">--</div>
-      </div>
-      <div class="body-stat-card">
-        <div class="body-stat-value" id="body-current-bf">--</div>
-        <div class="body-stat-label">Body Fat %</div>
-        <div class="body-stat-change neutral" id="body-bf-30d">--</div>
-      </div>
-      <div class="body-stat-card">
-        <div class="body-stat-value" id="body-7d-avg">--</div>
-        <div class="body-stat-label">7-Day Avg</div>
-        <div class="body-stat-change neutral" id="body-weight-30d">vs 30d ago</div>
-      </div>
-      <div class="body-stat-card">
-        <div class="body-stat-value" id="body-photo-count">0</div>
-        <div class="body-stat-label">Progress Photos</div>
-      </div>
+  <!-- Track Page (Body + Runs) -->
+  <div id="page-track" class="page">
+    <!-- Sub-tabs -->
+    <div class="track-tabs">
+      <button class="track-tab active" data-trtab="body">Body</button>
+      <button class="track-tab" data-trtab="runs">Runs</button>
     </div>
 
-    <!-- Log Weight & Body Fat -->
-    <div class="section-header">Log Today</div>
-    <div class="card">
-      <div class="body-log-form">
-        <div class="form-group">
-          <label id="body-weight-label">Weight (lbs)</label>
-          <input type="number" id="body-weight-input" placeholder="175" step="0.1">
-        </div>
-        <div class="form-group">
-          <label>Body Fat %</label>
-          <input type="number" id="body-bf-input" placeholder="15" step="0.1" min="1" max="60">
-        </div>
-      </div>
-      <button class="btn btn-primary" id="btn-log-body">Log Weight</button>
-    </div>
-
-    <!-- Progress Photos -->
-    <div class="section-header">Progress Photos</div>
-    <div class="card">
-      <div class="storage-warning" id="storage-warning">Storage getting large. Consider deleting older photos to free space.</div>
-      <button class="btn btn-secondary" id="btn-take-photo">Take Progress Photo</button>
-      <input type="file" id="photo-input" accept="image/*" capture="environment" class="hidden-input">
-      <div class="photo-grid" id="photo-grid"></div>
-    </div>
-
-    <!-- Weight Trend Chart -->
-    <div class="body-chart-container">
-      <h3>Weight Trend</h3>
-      <div class="chart-range-btns" id="weight-chart-range">
-        <button class="chart-range-btn active" data-range="30">30d</button>
-        <button class="chart-range-btn" data-range="60">60d</button>
-        <button class="chart-range-btn" data-range="90">90d</button>
-        <button class="chart-range-btn" data-range="all">All</button>
-      </div>
-      <canvas id="weight-chart"></canvas>
-    </div>
-
-    <!-- Body Fat Chart -->
-    <div class="body-chart-container">
-      <h3>Body Fat % Trend</h3>
-      <div class="chart-range-btns" id="bf-chart-range">
-        <button class="chart-range-btn active" data-range="30">30d</button>
-        <button class="chart-range-btn" data-range="60">60d</button>
-        <button class="chart-range-btn" data-range="90">90d</button>
-        <button class="chart-range-btn" data-range="all">All</button>
-      </div>
-      <canvas id="bf-chart"></canvas>
-    </div>
-
-    <!-- Recent Entries -->
-    <div class="section-header">Recent Entries (14 days)</div>
-    <div class="body-entries-list" id="body-entries-list">
-      <div class="body-empty">Log your first weigh-in to start tracking</div>
-    </div>
-  </div>
-
-  <!-- Runs Page -->
-  <div id="page-runs" class="page">
-    <!-- Run History View (default) -->
-    <div id="run-history-view">
-      <div class="run-summary-grid">
+    <!-- Body Panel -->
+    <div id="trtab-body" class="track-panel active">
+      <!-- Stats Summary -->
+      <div class="body-stats-summary" id="body-stats-summary">
         <div class="body-stat-card">
-          <div class="body-stat-value" id="run-total-km">0</div>
-          <div class="body-stat-label">Total km</div>
+          <div class="body-stat-value" id="body-current-weight">--</div>
+          <div class="body-stat-label">Current Weight</div>
+          <div class="body-stat-change neutral" id="body-weight-7d">--</div>
         </div>
         <div class="body-stat-card">
-          <div class="body-stat-value" id="run-total-count">0</div>
-          <div class="body-stat-label">Total Runs</div>
+          <div class="body-stat-value" id="body-current-bf">--</div>
+          <div class="body-stat-label">Body Fat %</div>
+          <div class="body-stat-change neutral" id="body-bf-30d">--</div>
         </div>
         <div class="body-stat-card">
-          <div class="body-stat-value" id="run-best-pace">--</div>
-          <div class="body-stat-label">Best Pace</div>
+          <div class="body-stat-value" id="body-7d-avg">--</div>
+          <div class="body-stat-label">7-Day Avg</div>
+          <div class="body-stat-change neutral" id="body-weight-30d">vs 30d ago</div>
         </div>
         <div class="body-stat-card">
-          <div class="body-stat-value" id="run-this-week">0</div>
-          <div class="body-stat-label">This Week (km)</div>
+          <div class="body-stat-value" id="body-photo-count">0</div>
+          <div class="body-stat-label">Progress Photos</div>
         </div>
       </div>
-      <button class="btn btn-primary" id="btn-start-run">Start Run</button>
-      <div class="section-header">Run History</div>
-      <div id="run-history-list">
-        <div class="body-empty">No runs yet — hit Start Run to begin</div>
+
+      <!-- Log Weight & Body Fat -->
+      <div class="section-header">Log Today</div>
+      <div class="card">
+        <div class="body-log-form">
+          <div class="form-group">
+            <label id="body-weight-label">Weight (lbs)</label>
+            <input type="number" id="body-weight-input" placeholder="175" step="0.1">
+          </div>
+          <div class="form-group">
+            <label>Body Fat %</label>
+            <input type="number" id="body-bf-input" placeholder="15" step="0.1" min="1" max="60">
+          </div>
+        </div>
+        <button class="btn btn-primary" id="btn-log-body">Log Weight</button>
+      </div>
+
+      <!-- Progress Photos -->
+      <div class="section-header">Progress Photos</div>
+      <div class="card">
+        <div class="storage-warning" id="storage-warning">Storage getting large. Consider deleting older photos to free space.</div>
+        <button class="btn btn-secondary" id="btn-take-photo">Take Progress Photo</button>
+        <input type="file" id="photo-input" accept="image/*" capture="environment" class="hidden-input">
+        <div class="photo-grid" id="photo-grid"></div>
+      </div>
+
+      <!-- Weight Trend Chart -->
+      <div class="body-chart-container">
+        <h3>Weight Trend</h3>
+        <div class="chart-range-btns" id="weight-chart-range">
+          <button class="chart-range-btn active" data-range="30">30d</button>
+          <button class="chart-range-btn" data-range="60">60d</button>
+          <button class="chart-range-btn" data-range="90">90d</button>
+          <button class="chart-range-btn" data-range="all">All</button>
+        </div>
+        <canvas id="weight-chart"></canvas>
+      </div>
+
+      <!-- Body Fat Chart -->
+      <div class="body-chart-container">
+        <h3>Body Fat % Trend</h3>
+        <div class="chart-range-btns" id="bf-chart-range">
+          <button class="chart-range-btn active" data-range="30">30d</button>
+          <button class="chart-range-btn" data-range="60">60d</button>
+          <button class="chart-range-btn" data-range="90">90d</button>
+          <button class="chart-range-btn" data-range="all">All</button>
+        </div>
+        <canvas id="bf-chart"></canvas>
+      </div>
+
+      <!-- Recent Entries -->
+      <div class="section-header">Recent Entries (14 days)</div>
+      <div class="body-entries-list" id="body-entries-list">
+        <div class="body-empty">Log your first weigh-in to start tracking</div>
       </div>
     </div>
 
-    <!-- Run Active View (hidden) -->
-    <div id="run-active-view" style="display:none">
-      <div class="run-map-container" id="run-map"></div>
-      <div class="run-stats-overlay">
-        <div class="run-stat-box">
-          <div class="run-stat-value" id="run-live-time">0:00</div>
-          <div class="run-stat-label">Time</div>
+    <!-- Runs Panel -->
+    <div id="trtab-runs" class="track-panel">
+      <!-- Run History View (default) -->
+      <div id="run-history-view">
+        <div class="run-summary-grid">
+          <div class="body-stat-card">
+            <div class="body-stat-value" id="run-total-km">0</div>
+            <div class="body-stat-label">Total km</div>
+          </div>
+          <div class="body-stat-card">
+            <div class="body-stat-value" id="run-total-count">0</div>
+            <div class="body-stat-label">Total Runs</div>
+          </div>
+          <div class="body-stat-card">
+            <div class="body-stat-value" id="run-best-pace">--</div>
+            <div class="body-stat-label">Best Pace</div>
+          </div>
+          <div class="body-stat-card">
+            <div class="body-stat-value" id="run-this-week">0</div>
+            <div class="body-stat-label">This Week (km)</div>
+          </div>
         </div>
-        <div class="run-stat-box">
-          <div class="run-stat-value" id="run-live-dist">0.00</div>
-          <div class="run-stat-label">km</div>
-        </div>
-        <div class="run-stat-box">
-          <div class="run-stat-value" id="run-live-pace">--:--</div>
-          <div class="run-stat-label">Current Pace</div>
-        </div>
-        <div class="run-stat-box">
-          <div class="run-stat-value" id="run-live-avg-pace">--:--</div>
-          <div class="run-stat-label">Avg Pace</div>
+        <button class="btn btn-primary" id="btn-start-run">Start Run</button>
+        <div class="section-header">Run History</div>
+        <div id="run-history-list">
+          <div class="body-empty">No runs yet — hit Start Run to begin</div>
         </div>
       </div>
-      <div class="run-controls">
-        <button class="btn btn-secondary" id="btn-run-pause">Pause</button>
-        <button class="btn btn-danger" id="btn-run-stop">Stop</button>
-      </div>
-      <div class="run-gps-status" id="run-gps-status">Acquiring GPS signal...</div>
-    </div>
 
-    <!-- Run Detail View (hidden) -->
-    <div id="run-detail-view" style="display:none">
-      <button class="btn btn-secondary" id="btn-run-back" style="width:auto;padding:8px 16px;margin-bottom:12px">&larr; Back</button>
-      <div class="run-map-container" id="run-detail-map"></div>
-      <div class="card run-detail-stats" id="run-detail-stats"></div>
-      <div class="section-header">Splits</div>
-      <div class="run-splits-table" id="run-splits-table"></div>
-      <button class="btn btn-danger" id="btn-run-delete">Delete Run</button>
+      <!-- Run Active View (hidden) -->
+      <div id="run-active-view" style="display:none">
+        <div class="run-map-container" id="run-map"></div>
+        <div class="run-stats-overlay">
+          <div class="run-stat-box">
+            <div class="run-stat-value" id="run-live-time">0:00</div>
+            <div class="run-stat-label">Time</div>
+          </div>
+          <div class="run-stat-box">
+            <div class="run-stat-value" id="run-live-dist">0.00</div>
+            <div class="run-stat-label">km</div>
+          </div>
+          <div class="run-stat-box">
+            <div class="run-stat-value" id="run-live-pace">--:--</div>
+            <div class="run-stat-label">Current Pace</div>
+          </div>
+          <div class="run-stat-box">
+            <div class="run-stat-value" id="run-live-avg-pace">--:--</div>
+            <div class="run-stat-label">Avg Pace</div>
+          </div>
+        </div>
+        <div class="run-controls">
+          <button class="btn btn-secondary" id="btn-run-pause">Pause</button>
+          <button class="btn btn-danger" id="btn-run-stop">Stop</button>
+        </div>
+        <div class="run-gps-status" id="run-gps-status">Acquiring GPS signal...</div>
+      </div>
+
+      <!-- Run Detail View (hidden) -->
+      <div id="run-detail-view" style="display:none">
+        <button class="btn btn-secondary" id="btn-run-back" style="width:auto;padding:8px 16px;margin-bottom:12px">&larr; Back</button>
+        <div class="run-map-container" id="run-detail-map"></div>
+        <div class="card run-detail-stats" id="run-detail-stats"></div>
+        <div class="section-header">Splits</div>
+        <div class="run-splits-table" id="run-splits-table"></div>
+        <button class="btn btn-danger" id="btn-run-delete">Delete Run</button>
+      </div>
     </div>
   </div>
 
@@ -2366,10 +2440,11 @@
     <!-- Season Overview -->
     <div class="card team-header-card" id="team-overview"></div>
 
-    <!-- Sub-tabs: Results / Standings -->
+    <!-- Sub-tabs: Results / Standings / Squad -->
     <div class="team-tabs">
       <button class="team-tab active" data-ttab="results">Results</button>
       <button class="team-tab" data-ttab="standings">Standings</button>
+      <button class="team-tab" data-ttab="squad">Squad</button>
     </div>
 
     <!-- Results Panel -->
@@ -2386,20 +2461,24 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Squad Page (FIFA Cards) -->
-  <div id="page-squad" class="page">
-    <div style="text-align:center;margin-bottom:12px">
-      <div style="font-size:1.1rem;font-weight:700">Battlin' Bears Squad</div>
-      <div style="font-size:0.78rem;color:var(--text-muted)">2025 Season — Tap a card to flip</div>
+    <!-- Squad Panel -->
+    <div id="ttab-squad" class="team-panel">
+      <div style="text-align:center;margin-bottom:12px">
+        <div style="font-size:1.1rem;font-weight:700">Battlin' Bears Squad</div>
+        <div style="font-size:0.85rem;color:var(--text-muted)">2025 Season — Tap a card to flip</div>
+      </div>
+      <div class="squad-filter-row" id="squad-filters"></div>
+      <div class="fifa-grid" id="fifa-grid"></div>
     </div>
-    <div class="squad-filter-row" id="squad-filters"></div>
-    <div class="fifa-grid" id="fifa-grid"></div>
   </div>
 
-  <!-- Settings Page -->
-  <div id="page-settings" class="page">
+  <!-- Settings Overlay -->
+  <div class="settings-overlay" id="settings-overlay">
+    <div class="settings-close-row">
+      <h2>Settings</h2>
+      <button class="btn-close-settings" id="btn-close-settings">&times;</button>
+    </div>
     <!-- Profiles -->
     <div class="section-header">Profile</div>
     <div class="card">
@@ -2553,9 +2632,9 @@
       <input type="file" id="import-file" accept=".json" class="hidden-input">
       <button class="btn btn-danger" id="btn-clear">Clear All Data</button>
     </div>
-  </div>
+  </div><!-- /settings-overlay -->
 
-  <!-- Bottom Navigation -->
+  <!-- Bottom Navigation (5 tabs) -->
   <nav class="bottom-nav">
     <button class="nav-item active" data-page="dashboard">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -2567,27 +2646,15 @@
     </button>
     <button class="nav-item" data-page="workout">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="4" height="10" rx="1"/><rect x="19" y="7" width="4" height="10" rx="1"/><line x1="5" y1="12" x2="19" y2="12"/><rect x="7" y="9" width="3" height="6" rx="0.5"/><rect x="14" y="9" width="3" height="6" rx="0.5"/></svg>
-      Workout
+      Train
     </button>
-    <button class="nav-item" data-page="runs">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      Runs
-    </button>
-    <button class="nav-item" data-page="body">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      Body
+    <button class="nav-item" data-page="track">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Track
     </button>
     <button class="nav-item" data-page="team">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
       Team
-    </button>
-    <button class="nav-item" data-page="squad">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-      Squad
-    </button>
-    <button class="nav-item" data-page="settings">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-      Settings
     </button>
   </nav>
 
@@ -2881,14 +2948,50 @@
     }
 
     // ── Navigation ────────────────────────────────────────────────────────
+    function navigateToPage(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+      const pageEl = document.getElementById(`page-${page}`);
+      if (pageEl) pageEl.classList.add('active');
+      const navBtn = document.querySelector(`.nav-item[data-page="${page}"]`);
+      if (navBtn) navBtn.classList.add('active');
+      // Close settings if open
+      document.getElementById('settings-overlay').classList.remove('open');
+    }
+
+    function navigateToTrackTab(tab) {
+      navigateToPage('track');
+      // Activate the correct sub-tab
+      document.querySelectorAll('.track-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+      const tabBtn = document.querySelector(`.track-tab[data-trtab="${tab}"]`);
+      if (tabBtn) tabBtn.classList.add('active');
+      const panel = document.getElementById(`trtab-${tab}`);
+      if (panel) panel.classList.add('active');
+    }
+
     document.querySelectorAll('.nav-item').forEach(btn => {
       btn.addEventListener('click', () => {
         if (btn.disabled) return;
-        const page = btn.dataset.page;
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-        document.getElementById(`page-${page}`).classList.add('active');
-        btn.classList.add('active');
+        navigateToPage(btn.dataset.page);
+      });
+    });
+
+    // ── Settings Slide-over ──────────────────────────────────────────────
+    document.getElementById('btn-open-settings').addEventListener('click', () => {
+      document.getElementById('settings-overlay').classList.add('open');
+    });
+    document.getElementById('btn-close-settings').addEventListener('click', () => {
+      document.getElementById('settings-overlay').classList.remove('open');
+    });
+
+    // ── Track Sub-tabs ───────────────────────────────────────────────────
+    document.querySelectorAll('.track-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.track-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('trtab-' + tab.dataset.trtab).classList.add('active');
       });
     });
 
@@ -3248,7 +3351,7 @@
       } else {
         foodEl.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:8px 0">
           No meals logged yet today
-          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="document.querySelector('[data-page=food]').click()">Log Food</button>
+          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="navigateToPage('food')">Log Food</button>
         </div>`;
       }
 
@@ -4630,7 +4733,7 @@
       }
 
       // Start workout button
-      html += `<button class="btn btn-secondary" style="margin-bottom:0" onclick="document.querySelector('[data-page=workout]').click()">
+      html += `<button class="btn btn-secondary" style="margin-bottom:0" onclick="navigateToPage('workout')">
         ${hasActivity ? 'View Training' : 'Start Workout'}
       </button>`;
 
@@ -5137,7 +5240,7 @@
       if (withWeight.length === 0) {
         contentEl.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:8px 0">
           Log your first weigh-in
-          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="document.querySelector('[data-page=body]').click()">Go to Body</button>
+          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="navigateToTrackTab('body')">Go to Body</button>
         </div>`;
         return;
       }
@@ -5302,7 +5405,7 @@
         // Start marker (green)
         L.circleMarker(latlngs[0], { radius: 8, fillColor: '#4ecca3', fillOpacity: 1, color: '#fff', weight: 2 }).addTo(map);
         // End marker (red)
-        L.circleMarker(latlngs[latlngs.length - 1], { radius: 8, fillColor: '#e94560', fillOpacity: 1, color: '#fff', weight: 2 }).addTo(map);
+        L.circleMarker(latlngs[latlngs.length - 1], { radius: 8, fillColor: '#c5a44e', fillOpacity: 1, color: '#fff', weight: 2 }).addTo(map);
 
         map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
       } else {
@@ -5348,7 +5451,7 @@
       // Init map
       if (runMap) { runMap.remove(); runMap = null; }
       runMap = initRunMap('run-map');
-      runPolyline = L.polyline([], { color: '#e94560', weight: 4, opacity: 0.8 }).addTo(runMap);
+      runPolyline = L.polyline([], { color: '#c5a44e', weight: 4, opacity: 0.8 }).addTo(runMap);
       runMarker = null;
 
       // Update button states
@@ -5409,7 +5512,7 @@
         runMarker.setLatLng([latitude, longitude]);
       } else {
         runMarker = L.circleMarker([latitude, longitude], {
-          radius: 8, fillColor: '#e94560', fillOpacity: 1, color: '#fff', weight: 2
+          radius: 8, fillColor: '#c5a44e', fillOpacity: 1, color: '#fff', weight: 2
         }).addTo(runMap);
       }
 
@@ -5682,7 +5785,7 @@
       if (runs.length === 0) {
         el.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:8px 0">
           No runs logged yet
-          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="document.querySelector('[data-page=runs]').click()">Go Run</button>
+          <br><button class="btn btn-secondary" style="margin-top:8px;width:auto;padding:8px 20px" onclick="navigateToTrackTab('runs')">Go Run</button>
         </div>`;
         return;
       }
